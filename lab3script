@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -l nodes=4:ppn=16:physical
+#PBS -l walltime=00:10:00
+#PBS -o /home/Students/ccooley/cpen435/HW6/lab3_out
+#PBS -j oe
+#PBS -N HW6
+
+date
+export PROGRAM="/home/Students/ccooley/cpen435/HW6/lab3"
+mpirun -machinefile $PBS_NODEFILE $PROGRAM 512
+date
+exit 0 
